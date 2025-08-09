@@ -3,7 +3,7 @@ using TodoList.Api.Entities;
 
 namespace TodoList.Api.Persistence;
 
-public class TodoListContext(DbContextOptions options) : DbContext(options)
+public class TodoListContext(DbContextOptions<TodoListContext> options) : DbContext(options)
 {
     public DbSet<UserTask> UserTasks => Set<UserTask>();
 

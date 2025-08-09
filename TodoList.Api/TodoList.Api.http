@@ -1,6 +1,37 @@
 @TodoList.Api_HostAddress = http://localhost:5223
 
-GET {{TodoList.Api_HostAddress}}/weatherforecast/
+### Get all user tasks
+GET {{TodoList.Api_HostAddress}}/api/usertask
 Accept: application/json
 
 ###
+
+### Get user task by ID
+GET {{TodoList.Api_HostAddress}}/api/usertask/{{taskId}}
+Accept: application/json
+
+###
+
+### Create a new user task
+POST {{TodoList.Api_HostAddress}}/api/usertask
+Content-Type: application/json
+
+{
+  "name": "My first task"
+}
+
+###
+
+### Update a user task
+PUT {{TodoList.Api_HostAddress}}/api/usertask/{{taskId}}
+Content-Type: application/json
+
+{
+  "id": "{{taskId}}",
+  "name": "Updated task name"
+}
+
+###
+
+### Delete a user task
+DELETE {{TodoList.Api_HostAddress}}/api/usertask/{{taskId}}
